@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+:root {
+  --bg-0: #02070c;
+  --bg-1: #040b12;
+  --bg-2: #07111a;
+  --card: #071824;
+  --card-2: #091d2a;
+  --cyan: #00eafb;
+  --blue: #00a8ff;
+  --purple: #725bff;
+  --magenta: #ff35d3;
+  --pink: #ff4f9a;
+  --orange: #ff745b;
+  --white: #f7fafc;
+  --muted: #a6b5c3;
+  --border-cyan: rgba(0, 234, 251, 0.18);
+}
+
+@theme inline {
+  --color-bg-0: var(--bg-0);
+  --color-bg-1: var(--bg-1);
+  --color-bg-2: var(--bg-2);
+  --color-card: var(--card);
+  --color-card-2: var(--card-2);
+  --color-cyan: var(--cyan);
+  --color-blue: var(--blue);
+  --color-purple: var(--purple);
+  --color-magenta: var(--magenta);
+  --color-pink: var(--pink);
+  --color-orange: var(--orange);
+  --color-ink: var(--white);
+  --color-muted: var(--muted);
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+}
+
+* {
+  border-color: var(--border-cyan);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-0);
+  color: var(--white);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(0, 234, 251, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 234, 251, 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--cyan), var(--purple) 55%, var(--magenta));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--cyan), var(--blue) 45%, var(--purple) 80%, var(--magenta));
+  color: #04121a;
+  font-weight: 600;
+  box-shadow: 0 0 0 1px rgba(0, 234, 251, 0.25), 0 8px 30px -8px rgba(0, 168, 255, 0.55);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 1px rgba(0, 234, 251, 0.4), 0 12px 34px -6px rgba(255, 53, 211, 0.45);
+  filter: brightness(1.05);
+}
+
+.btn-secondary {
+  background: rgba(7, 24, 36, 0.6);
+  color: var(--white);
+  border: 1px solid var(--border-cyan);
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 234, 251, 0.55);
+  background: rgba(7, 24, 36, 0.9);
+}
+
+.card {
+  background: rgba(7, 24, 36, 0.8);
+  border: 1px solid var(--border-cyan);
+  border-radius: 18px;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 234, 251, 0.5);
+  box-shadow: 0 20px 40px -20px rgba(0, 168, 255, 0.35);
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--cyan);
+}
+
+.glow-radial {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(600px 400px at 15% 0%, rgba(0, 234, 251, 0.12), transparent 60%),
+    radial-gradient(600px 400px at 85% 30%, rgba(114, 91, 255, 0.14), transparent 60%),
+    radial-gradient(500px 350px at 50% 100%, rgba(255, 53, 211, 0.08), transparent 60%);
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade-in {
+  animation: fade-in 0.6s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
