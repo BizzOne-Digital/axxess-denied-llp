@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Hero from "@/components/home/Hero";
 import ServicesPreview from "@/components/home/ServicesPreview";
 import AboutPreview from "@/components/home/AboutPreview";
-import WhyChooseUs from "@/components/home/WhyChooseUs";
 import Process from "@/components/home/Process";
 import ServicesBanner from "@/components/home/ServicesBanner";
 import TestimonialsPreview from "@/components/home/TestimonialsPreview";
@@ -37,7 +36,6 @@ export default function Home() {
       <Hero />
       <ServicesPreview />
       <AboutPreview />
-      <WhyChooseUs />
       <Process />
       <ServicesBanner />
       <TestimonialsPreview />
