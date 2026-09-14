@@ -22,9 +22,14 @@ export default function ServicesPreview() {
           {cardServices.map((service) => (
             <ServiceCard key={service.slug} service={service} />
           ))}
+          {listServices.map((service) => (
+            <div key={service.slug} className="hidden sm:block">
+              <ServiceCard service={service} showLink={false} />
+            </div>
+          ))}
         </div>
 
-        <ul className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-8 border-t border-[var(--border-cyan)] pt-10">
+        <ul className="mt-10 grid grid-cols-1 gap-y-8 border-t border-[var(--border-cyan)] pt-10 sm:hidden">
           {listServices.map((service) => (
             <li key={service.slug} className="flex items-start gap-3">
               <ServiceIcon icon={service.icon} className="h-5 w-5 text-cyan shrink-0 mt-0.5" />
